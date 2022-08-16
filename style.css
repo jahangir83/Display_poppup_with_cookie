@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Popping");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Popping", sans-serif ;
+
+}
+
+body{
+    min-height: 100vh;
+}
+/*  */
+.popup-screen{
+    position: fixed;
+    z-index: 999999;
+    background: rgba(255,255,255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.5s ease;
+    transition-property: visibility;
+
+}
+.popup-screen.active{
+    visibility: visible
+}
+.popup-box{
+position: relative;
+background: rgba(255,255,255, 0.8);
+backdrop-filter: blur(10px);
+max-width: 350px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 20px;
+padding: 50px 40px;
+border-radius: 10px;
+transform: scale(0);
+transition: 0.5s ease;
+transition-property: transform; 
+} 
+.popup-screen.active .popup-box{
+    transform: scale(1);
+}
+.popup-box h2{
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.popup-box .btn{
+    color: #fff;
+    background: red;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding:8px;
+    border-radius: 9%;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+.close-btn{
+    position: absolute;
+    font-size: 1rem;
+    top: 0;right: 10px;
+    margin: 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s ease;
+    transition-property: opacity;
+
+
+}
+.close-btn:hover{
+    opacity: 1;
+}
+/*  
+.*/
+section{
+    padding: 50px 100px;
+}
+.parent{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image{
+    position: relative;
+    width: 45%;
+    min-height: 450px;
+}
+.image img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.info{
+    position: relative;
+    width: 52%;
+}
+.info h2{
+    font-size: 2rem;
+    font-weight: 800;
+}
+.info p{
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+@media (max-width: 990px) {
+    section {
+        padding: 50px 30px;
+    }
+
+    .parent{
+        display: block;
+    }
+    .image{
+        width: 100%;
+    }
+    .info{
+        width: 100%;
+        margin-top: 15px;
+    }
+}
